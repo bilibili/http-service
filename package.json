@@ -1,0 +1,59 @@
+{
+  "name": "http-service",
+  "version": "1.0.0",
+  "description": "a unify http-service.",
+  "private": true,
+  "scripts": {
+    "init": "esno ./scripts/init.ts",
+    "start": "esno ./scripts/start.ts",
+    "create": "esno ./scripts/create.ts",
+    "pub": "esno ./scripts/publish.ts",
+    "docs:sync": "esno ./scripts/syncdocs.ts",
+    "dev": "cross-env PROJECT_SCRIPT=dev node scripts/start.js",
+    "build": "cross-env PROJECT_SCRIPT=build node scripts/start.js",
+    "i": "cross-env PROJECT_SCRIPT=install node scripts/start.js",
+    "docs:dev": "cross-env NODE_ENV=dev vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [],
+  "author": "jiansipeng",
+  "maintainers": [
+    {
+      "name": "jiansipeng",
+      "email": "jiansipeng@bilibili.com"
+    },
+    {
+      "name": "wujunyi",
+      "email": "wujunyi@bilibili.com"
+    }
+  ],
+  "license": "ISC",
+  "workspaces": [
+    "packages/*",
+    "server",
+    "docs"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "chalk": "^5.3.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-vue": "^9.9.0",
+    "esno": "^0.16.3",
+    "glob": "^10.2.6",
+    "inquirer": "^9.2.6",
+    "inquirer-search-list": "^1.2.6",
+    "ncp": "^2.0.0",
+    "prettier": "^2.8.4",
+    "typescript": "4.8.4",
+    "vite": "^5.0.10",
+    "vite-plugin-external": "^1.2.8",
+    "vitepress": "1.0.0-beta.5"
+  }
+}

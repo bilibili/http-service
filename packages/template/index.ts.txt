@@ -1,0 +1,21 @@
+import type { IMiddlewareHandler } from '@http-svc/middleware/types/middleware'
+import { HttpSvcMiddleware } from '@http-svc/middleware'
+
+// 可选
+interface IPayload {
+  flag?: boolean
+}
+
+export const {{camelCaseName}}: IMiddlewareHandler<IPayload> = async (ctx, next, config) => {
+  console.log('request before')
+  await next()
+  console.log('request after')
+}
+
+export class HttpSvc{{CamelCaseName}} extends HttpSvcMiddleware<IPayload> {
+  static handler = {{camelCaseName}}
+  name = '{{UPPER_SNAKE_CASE_NAME}}'
+  constructor() {
+    super({{camelCaseName}})
+  }
+}

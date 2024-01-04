@@ -1,0 +1,29 @@
+{
+  "name": "@http-svc/{{name}}",
+  "version": "1.0.0",
+  "description": "{{description}}",
+  "main": "dist/index.mjs",
+  "module": "dist/index.mjs",
+  "scripts": {
+    "build": "pnpm build:esm && pnpm build:cjs",
+    "build:esm": "BUILD_FORMAT=esm vite build",
+    "build:cjs": "BUILD_FORMAT=cjs vite build"
+  },
+  "files": [
+    "dist",
+    "index.ts",
+    "README.md"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@http-svc/middleware": "{{middleware}}"
+  },
+  "devDependencies": {
+    "@http-svc/middleware": "{{middleware}}"
+    "vite": "^4.3.9",
+    "vite-plugin-dts": "^2.3.0",
+    "vite-plugin-external": "^1.2.8"
+  }
+}

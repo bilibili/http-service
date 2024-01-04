@@ -1,0 +1,35 @@
+{
+  "name": "@http-svc/server-fetch",
+  "version": "1.0.0",
+  "description": "服务端fetch中间件",
+  "keywords": [
+    "http-svc",
+    "统一请求库",
+    "请求库"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "scripts": {
+    "build": "vite build"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "README.md"
+  ],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@http-svc/middleware": "workspace:^1.0.0",
+    "node-fetch": "^2.6.7"
+  },
+  "dependencies": {
+    "node-fetch": "2.6.7"
+  },
+  "devDependencies": {
+    "@http-svc/middleware": "workspace:^1.0.0",
+    "vite": "^4.3.9",
+    "vite-plugin-dts": "^2.3.0",
+    "vite-plugin-external": "^1.2.8"
+  }
+}
