@@ -1,12 +1,15 @@
 {
   "name": "http-svc",
-  "version": "1.0.0",
-  "description": "Unify http request service",
-  "main": "dist/http-service.mjs",
+  "version": "1.0.0-rc.1",
+  "description": "A HTTP request service for browser and node.js",
+  "main": "dist/http-service.js",
   "module": "dist/http-service.mjs",
   "types": "types/index.d.ts",
   "keywords": [
     "http-svc",
+    "middleware",
+    "request",
+    "fetch",
     "统一请求库",
     "请求库"
   ],
@@ -24,10 +27,10 @@
     "prebuild": "pnpm test && pnpm build"
   },
   "peerDependencies": {
-    "@http-svc/middleware": "^1.0.0"
+    "@http-svc/middleware": "workspace:^1.0.0-rc.2"
   },
   "dependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0"
+    "@http-svc/middleware": "workspace:^1.0.0-rc.2"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.0",

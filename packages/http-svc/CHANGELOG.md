@@ -27,8 +27,8 @@
 
 - 弃用的功能或特性 -->
 
-## [v1.0.0] - 2023-07-31
+## [v1.0.0-rc.1] - 2023-01-11
 
 ### Added
 
-- ⭐️重试中间件增加运行时短路控制参数`runtimeShortCircuit`
+- Release RC version

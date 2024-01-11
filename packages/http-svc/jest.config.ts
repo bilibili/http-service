@@ -4,6 +4,7 @@ const config: Config = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   extensionsToTreatAsEsm: ['.ts'],
+  testMatch: ['**/*.spec.ts'],
   transform: {
     '^.+\\.tsx?$': [
       'ts-jest',

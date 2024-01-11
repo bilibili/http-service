@@ -63,7 +63,7 @@ export interface IFetchConfig {
   /**
    * 请求头
    */
-  headers?: RequestCredentials
+  headers?: IFetchHeaders
   /**
    * 请求凭证
    */
