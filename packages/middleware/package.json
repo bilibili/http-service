@@ -1,9 +1,11 @@
 {
   "name": "@http-svc/middleware",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.0-rc.1",
+  "description": "HTTP Service base middleware",
+  "repository": "https://github.com/bilibili/http-service",
+  "private": false,
   "main": "dist/index.js",
-  "module": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "types/index.d.ts",
   "scripts": {
     "build": "vite build"
@@ -14,9 +16,9 @@
     "types",
     "README.md"
   ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["http-svc", "middleware", "request", "fetch"],
+  "author": "Josper",
+  "license": "Apache-2.0",
   "devDependencies": {
     "vite": "^4.3.9",
     "vite-plugin-dts": "^2.3.0"

@@ -1,4 +1,4 @@
-import { IFetchConfig, FetchBaseURL, FetchMethod, IFetchParams, IFetchData, IFetchHeaders, FetchCredentials } from './fetch'
+import { IFetchConfig, FetchBaseURL, FetchMethod, IFetchParams, IFetchData, IFetchHeaders } from './fetch'
 import { IMiddlewareHandlerConfig, IHttpSvcMiddleware, IMiddlewareHandler } from './middleware'
 export interface IFetchRequest {
   url: string
@@ -6,7 +6,7 @@ export interface IFetchRequest {
   data?: IFetchData
   method: FetchMethod
   headers?: IFetchHeaders
-  credentials?: FetchCredentials
+  credentials?: RequestCredentials
   function?: IRequestFunction
 }
 export interface IFetchResponse extends Response {

@@ -7,7 +7,7 @@ export default defineConfig({
     target: 'esnext',
     lib: {
       entry: './index.ts',
-      formats: ['cjs'],
+      formats: ['cjs', 'es'],
       fileName: 'index'
     }
   }

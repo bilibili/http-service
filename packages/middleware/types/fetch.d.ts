@@ -19,16 +19,24 @@ export type FetchMethod =
   | 'LINK'
   | 'unlink'
   | 'UNLINK'
-export type FetchCredentials = 'omit' | 'same-origin' | 'include'
+
+/**
+ * Q: Why not use HeadersInit?
+ * A: Because we don't want to deal with multiple types of headers.
+ */
 export interface IFetchHeaders {
   [key: string]: string
 }
+/**
+ * Q: Why not accept array or object or boolean?
+ * A: Because the query is only presented as a string in the URL, and we just want to keep it simple.
+ */
 export interface IFetchParams {
   [key: string]: string | number | undefined
 }
 export type IFetchData = BodyInit | Record<string, any>
 /**
- * use http policy or not
+ * Use http policy or not
  * like:
  * 1. '//api.domain.com'
  * 2. 'http://api.domain.com'
@@ -55,11 +63,11 @@ export interface IFetchConfig {
   /**
    * 请求头
    */
-  headers?: IFetchHeaders
+  headers?: RequestCredentials
   /**
    * 请求凭证
    */
-  credentials?: FetchCredentials
+  credentials?: RequestCredentials
   params?: IFetchParams
   data?: IFetchData
 }
