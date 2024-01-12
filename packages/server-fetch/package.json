@@ -17,17 +17,16 @@
     "lib",
     "README.md"
   ],
-  "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "peerDependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0",
+    "@http-svc/middleware": "workspace:^1.0.0-rc.2",
     "node-fetch": "^2.6.7"
   },
   "dependencies": {
     "node-fetch": "2.6.7"
   },
   "devDependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0",
+    "@http-svc/middleware": "workspace:^1.0.0-rc.2",
     "vite": "^4.3.9",
     "vite-plugin-dts": "^2.3.0",
     "vite-plugin-external": "^1.2.8"

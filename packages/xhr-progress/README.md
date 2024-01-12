@@ -5,7 +5,7 @@
 ## 使用方式
 
 ```js
-import { HttpSvcXhrProgress } from "@bilibili/http-svc-xhr-progress"
+import { HttpSvcXhrProgress } from "@http-svc/xhr-progress"
 
 const xttpSvc = new HttpService({
     fetch: new HttpSvcXhrProgress()

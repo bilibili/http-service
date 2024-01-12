@@ -7,8 +7,7 @@
     "start": "esno index.ts"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@types/koa": "2.13.5",
     "@types/koa-router": "^7.4.7",

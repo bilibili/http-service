@@ -1,6 +1,6 @@
 {
   "name": "http-svc",
-  "version": "1.0.0-rc.3",
+  "version": "1.0.0-rc.4",
   "description": "A HTTP request service for browser and node.js",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -49,6 +49,5 @@
     "vite-plugin-external": "^1.2.8",
     "vite-plugin-host": "^1.0.2"
   },
-  "author": "Josper",
   "license": "Apache-2.0"
 }

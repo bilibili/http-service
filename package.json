@@ -16,19 +16,6 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
-  "keywords": [],
-  "author": "jiansipeng",
-  "maintainers": [
-    {
-      "name": "jiansipeng",
-      "email": "jiansipeng@bilibili.com"
-    },
-    {
-      "name": "wujunyi",
-      "email": "wujunyi@bilibili.com"
-    }
-  ],
-  "license": "ISC",
   "workspaces": [
     "packages/*",
     "server",

@@ -1,0 +1,46 @@
+{
+  "name": "unios",
+  "version": "1.0.0",
+  "description": "A request SDK with axios-style, based on http-svc.",
+  "main": "./dist/unios.js",
+  "browser": "./dist/unios.umd.js",
+  "module": "./dist/unios.esm.js",
+  "types": "./index.d.ts",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "http-svc",
+    "request",
+    "axios",
+    "middleware"
+  ],
+  "files": [
+    "dist",
+    "index.d.ts",
+    "index.ts",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "http-svc": "workspace:1.0.0-rc.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@http-svc/middleware": "workspace:^1.0.0-rc.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "http-svc": "workspace:1.0.0-rc.4",
+    "cross-env": "^7.0.3",
+    "rollup": "^2.75.7",
+    "rollup-plugin-filesize": "^10.0.0",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "tr46": "^4.1.1",
+    "tslib": "^2.5.0",
+    "typescript": "4.8.4"
+  },
+  "license": "Apache-2.0"
+}

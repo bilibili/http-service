@@ -5,13 +5,10 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "outDir": "lib",
+    "outDir": "dist",
     "baseUrl": ".",
-    "paths": {
-      "types/*": ["types/*"]
-    },
     "noImplicitAny": false,
     "moduleResolution": "node",
   },
-  "include": ["src", "src/__tests__/.spec.ts"]
+  "include": ["./*.ts"],
 }

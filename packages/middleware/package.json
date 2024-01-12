@@ -17,7 +17,6 @@
     "README.md"
   ],
   "keywords": ["http-svc", "middleware", "request", "fetch"],
-  "author": "Josper",
   "license": "Apache-2.0",
   "devDependencies": {
     "vite": "^4.3.9",

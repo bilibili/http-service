@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./dist/unios.umd.js"></script>
+</head>
+<body>
+    <div id="form">
+        <input type="text" id="url">
+        <button onclick="doRequest()">请求</button>
+    </div>
+    <div id="res"></div>
+    <script>
+        const resBox = document.querySelector('#res')
+        async function doRequest() {
+            try {
+                const url = document.querySelector('#form input').value
+                const res = await Unios({
+                    url,
+                })
+                resBox.innerHTML = 'success:' + JSON.stringify(res)
+            } catch (err) {
+                resBox.innerHTML = 'fail:' + err.message
+            }
+        }
+    </script>
+</body>
+</html>
