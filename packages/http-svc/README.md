@@ -47,16 +47,16 @@ httpSvc
         console.log('after request');
     })
     .request({
-    url: 'https://httpbin.org/get',
-    method: 'GET',
-    params: {
-        a: 1,
-        b: 2,
-    },
-    timeout: 1000,
-    // ...其他配置
+        url: 'https://httpbin.org/get',
+        method: 'GET',
+        params: {
+            a: 1,
+            b: 2,
+        },
+        timeout: 1000,
+        // ...其他配置
     }).then((res) => {
-    console.log(res);
+        console.log(res);
     });
 ```
 
@@ -72,7 +72,7 @@ npm install --save abortcontroller-polyfill
 import 'abortcontroller-polyfill/dist/polyfill-patch-fetch'
 ```
 
-- **Browser**
+- **Node**
 
 因为node环境我们要结合node-fetch发起请求，可以使用`@http-svc/server-fetch`，请参考该中间件的文档
 

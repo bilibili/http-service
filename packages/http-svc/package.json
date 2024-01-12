@@ -1,9 +1,9 @@
 {
   "name": "http-svc",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.3",
   "description": "A HTTP request service for browser and node.js",
-  "main": "dist/http-service.js",
-  "module": "dist/http-service.mjs",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "types/index.d.ts",
   "keywords": [
     "http-svc",

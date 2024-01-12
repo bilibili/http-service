@@ -24,7 +24,8 @@ export default defineConfig({
     minify: false,
     lib: {
       entry: 'src/index.ts',
-      formats: ['cjs', 'es']
+      formats: ['cjs', 'es'],
+      fileName: 'index'
     }
   },
   plugins,
