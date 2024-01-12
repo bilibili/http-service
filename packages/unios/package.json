@@ -1,6 +1,6 @@
 {
   "name": "unios",
-  "version": "1.0.0",
+  "version": "1.0.0-rc.1",
   "description": "A request SDK with axios-style, based on http-svc.",
   "main": "./dist/unios.js",
   "browser": "./dist/unios.umd.js",
