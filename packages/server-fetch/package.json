@@ -1,9 +1,13 @@
 {
   "name": "@http-svc/server-fetch",
-  "version": "1.0.0",
-  "description": "服务端fetch中间件",
+  "version": "1.0.0-rc.1",
+  "description": "http service 中间件：服务端fetch",
   "keywords": [
     "http-svc",
+    "fetch",
+    "server fetch",
+    "node fetch",
+    "request",
     "统一请求库",
     "请求库"
   ],
@@ -14,19 +18,20 @@
   },
   "files": [
     "dist",
-    "lib",
+    "index.ts",
+    "index.d.ts",
     "README.md"
   ],
   "license": "Apache-2.0",
   "peerDependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0-rc.2",
+    "@http-svc/middleware": "workspace:^1.0.0-rc.3",
     "node-fetch": "^2.6.7"
   },
   "dependencies": {
-    "node-fetch": "2.6.7"
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0-rc.2",
+    "@http-svc/middleware": "workspace:^1.0.0-rc.3",
     "vite": "^4.3.9",
     "vite-plugin-dts": "^2.3.0",
     "vite-plugin-external": "^1.2.8"

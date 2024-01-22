@@ -1,4 +1,4 @@
-import { IFetchConfig, FetchBaseURL, FetchMethod, IFetchParams, IFetchData, IFetchHeaders } from './fetch'
+import { IFetchConfig, FetchBaseURL, FetchMethod, IFetchParams, IFetchData, IFetchHeaders, IFetchResponse } from './fetch'
 import { IMiddlewareHandlerConfig, IHttpSvcMiddleware, IMiddlewareHandler } from './middleware'
 export interface IFetchRequest {
   url: string
@@ -8,9 +8,6 @@ export interface IFetchRequest {
   headers?: IFetchHeaders
   credentials?: RequestCredentials
   function?: IRequestFunction
-}
-export interface IFetchResponse extends Response {
-  data?: any
 }
 export interface IMiddlewareContext {
   [name: string]: IMiddlewareHandlerConfig<any>
@@ -29,4 +26,7 @@ export interface IHttpSvcContext {
   request?: IFetchRequest
   config: IFetchConfig
   middleware: IMiddlewareContext
+}
+export interface IRequestFunction {
+  (ctx: IHttpSvcContext): Promise<any>
 }

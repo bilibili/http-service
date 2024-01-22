@@ -1,5 +1,5 @@
 import type { IMiddlewareHandler } from '@http-svc/middleware/types/middleware'
-import type { IFetchResponse } from '@http-svc/middleware/types/context'
+import type { IFetchResponse } from '@http-svc/middleware/types/fetch'
 import { HttpSvcMiddleware } from '@http-svc/middleware'
 import fetch, { BodyInit } from 'node-fetch'
 
@@ -30,7 +30,12 @@ function doTimeout<T = unknown>(promise: Promise<T>, timeout: number): Promise<T
       })
   })
 }
-export const serverFetch: IMiddlewareHandler = async (ctx, next) => {
+
+interface IPayload {
+  timeout?: number
+}
+
+export const serverFetch: IMiddlewareHandler<IPayload> = async (ctx, next, config) => {
   if (!ctx.request) return await next()
   if (ctx.response) return await next()
   const { method, headers, data } = ctx.request
@@ -48,7 +53,8 @@ export const serverFetch: IMiddlewareHandler = async (ctx, next) => {
   let response: IFetchResponse | null = null
 
   if (typeof AbortController === 'undefined') {
-    const timeout = ctx.config.timeout ?? 350
+    const def = config?.payload?.timeout || 500
+    const timeout = ctx.config.timeout ?? def
     response = await doTimeout<IFetchResponse>(promise, timeout)
   } else {
     response = await promise
@@ -63,8 +69,15 @@ export const serverFetch: IMiddlewareHandler = async (ctx, next) => {
   return await next()
 }
 
+export const SERVER_FETCH = 'SERVER_FETCH' as const
+
 export class HttpSvcServerFetch extends HttpSvcMiddleware {
   static handler = serverFetch
-  handler = serverFetch
-  name = 'SERVER_FETCH'
+  name = SERVER_FETCH
+  constructor(payload?: IPayload) {
+    super({
+      handler: serverFetch,
+      payload
+    })
+  }
 }

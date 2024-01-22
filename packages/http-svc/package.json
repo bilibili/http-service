@@ -1,6 +1,6 @@
 {
   "name": "http-svc",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.5",
   "description": "A HTTP request service for browser and node.js",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -27,10 +27,10 @@
     "prebuild": "pnpm test && pnpm build"
   },
   "peerDependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0-rc.2"
+    "@http-svc/middleware": "workspace:^1.0.0-rc.3"
   },
   "dependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0-rc.2"
+    "@http-svc/middleware": "workspace:^1.0.0-rc.3"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.0",

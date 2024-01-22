@@ -73,3 +73,7 @@ export interface IFetchConfig {
 }
 
 export type FetchFunction = typeof window.fetch
+
+export interface IFetchResponse extends Response {
+  data?: any
+}
