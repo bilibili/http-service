@@ -1,6 +1,6 @@
 {
   "name": "@http-svc/middleware",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.3",
   "description": "HTTP Service base middleware",
   "repository": "https://github.com/bilibili/http-service",
   "private": false,

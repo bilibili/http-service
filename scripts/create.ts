@@ -64,7 +64,7 @@ const modifyFile = (filePath: string, replaces: Array<string[]>) => {
         ['description', description],
         ['http-svc', getDependVersion('http-svc')],
         ['@http-svc/middleware', getDependVersion('middleware')],
-        ['http-svc-types', getDependVersion('types')],
+        ['@http-svc/types', getDependVersion('types')],
     ])
     modifyFile(`packages/${name}/index.ts`, [
         ['name', name],

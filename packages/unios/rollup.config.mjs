@@ -33,7 +33,8 @@ const getConfig = (format, ugly = false) => {
     output: {
       file: calcPath(`dist/${fileName}`),
       format,
-      name: 'Unios'
+      name: 'Unios',
+      exports: 'default'
     },
     plugins: [
       typescript({

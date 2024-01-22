@@ -14,7 +14,7 @@ test('测试ctx', async () => {
   })
     .with('DEBUG', true)
     .request({
-      url: '//api.bilibili.com',
+      url: '//api.domain.com',
       method: 'GET'
     })
   expect(config).toHaveProperty('config')

@@ -15,10 +15,10 @@
   "keywords": [],
   "license": "Apache-2.0",
   "peerDependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0-rc.2"
+    "@http-svc/middleware": "workspace:^1.0.0-rc.3"
   },
   "devDependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0-rc.2",
+    "@http-svc/middleware": "workspace:^1.0.0-rc.3",
     "vite": "^4.3.9",
     "vite-plugin-dts": "^2.3.0",
     "vite-plugin-external": "^1.2.8"

@@ -1,6 +1,6 @@
 import type { FetchBaseURL, IFetchConfig, IFetchResponse, FetchMethod } from '@http-svc/middleware/types/fetch'
 import type { IMiddlewareHandler, IHttpSvcMiddleware, IMiddlewareHandlerConfig } from '@http-svc/middleware/types/middleware'
-import type { IMiddlewareContext, IHttpSvcContext, IUseAsyncRequest } from '@http-svc/middleware/types/context'
+import type { IMiddlewareContext, IHttpSvcContext, IUseAsyncRequest, IRequestFunction } from '@http-svc/middleware/types/context'
 
 export interface IHttpServiceInit {
   baseURL?: FetchBaseURL
@@ -46,9 +46,6 @@ export interface IHttpSvcConfigControl {
  * RequestControl
  */
 
-export interface IRequestFunction {
-  (ctx: IHttpSvcContext): Promise<any>
-}
 export interface IHttpSvcControlRequest {
   (config: IFetchConfig, middlewareCtx: IMiddlewareContext, fn?: any): Promise<any>
 }
@@ -81,6 +78,7 @@ export {
   IFetchConfig,
   IHttpSvcContext,
   IFetchResponse,
+  IRequestFunction,
   IMiddlewareHandlerConfig,
   IMiddlewareContext,
   FetchMethod,

@@ -15,10 +15,12 @@ export class RequestControl extends HttpSvcControl {
    * @returns
    */
   public async request(config: IFetchConfig, middlewareCtx: IMiddlewareContext = {}, fn?: any): Promise<any> {
-    if (!fn && !this.fn) {
-      this.generateRequestFunction()
+    if (!fn) {
+      if (!this.fn) {
+        this.generateRequestFunction()
+      }
+      fn = this.fn
     }
-    fn ||= this.fn
     return await fn(this.createContext(config, middlewareCtx, fn))
   }
 

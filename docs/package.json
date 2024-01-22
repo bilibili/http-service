@@ -1,0 +1,14 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "HTTP service docs",
+  "main": "index.js",
+  "scripts": {
+    "docs:build": "vitepress build"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "1.0.0-beta.5",
+    "vue": "^3.4.15"
+  }
+}
