@@ -1,6 +1,6 @@
 {
   "name": "http-svc",
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0-rc.6",
   "description": "A HTTP request service for browser and node.js",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

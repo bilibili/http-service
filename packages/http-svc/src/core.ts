@@ -61,7 +61,7 @@ export default class HttpService implements IHttpService {
   }
 
   // 发起请求，调用请求控制
-  public request(config: IFetchConfig): Promise<any> {
+  public request<T = any>(config: IFetchConfig): Promise<T> {
     return this.requestCtrl.request(config)
   }
 

@@ -16,7 +16,7 @@ declare class HttpService implements IHttpService {
      */
     constructor(initConfig?: IHttpServiceInit | IHttpSvcMiddleware[]);
     register(middlewares: IHttpSvcMiddleware[]): void;
-    request(config: IFetchConfig): Promise<any>;
+    request<T = any>(config: IFetchConfig): Promise<T>;
     disable(middlewareName: BuiltInMiddlewareName | string): IAssembleDispatcher;
     with(middleware: IHttpSvcMiddleware | IMiddlewareHandler | BuiltInMiddlewareName | string, payload?: any): IAssembleDispatcher;
     setFetch(fetch: IHttpSvcMiddleware): void;

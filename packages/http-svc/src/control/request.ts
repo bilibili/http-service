@@ -14,12 +14,12 @@ export class RequestControl extends HttpSvcControl {
    * @param fn 临时组织的请求方法
    * @returns
    */
-  public async request(config: IFetchConfig, middlewareCtx: IMiddlewareContext = {}, fn?: any): Promise<any> {
+  public async request(config: IFetchConfig, middlewareCtx: IMiddlewareContext = {}, fn?: IRequestFunction): Promise<any> {
     if (!fn) {
       if (!this.fn) {
         this.generateRequestFunction()
       }
-      fn = this.fn
+      fn = this.fn as IRequestFunction
     }
     return await fn(this.createContext(config, middlewareCtx, fn))
   }

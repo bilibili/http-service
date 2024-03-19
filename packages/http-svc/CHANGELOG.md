@@ -27,6 +27,16 @@
 
 - 弃用的功能或特性 -->
 
+## [v1.0.0-rc.6] - 2023-03-19
+
+### Added
+
+- Types update
+
+### Fixed
+
+- AssembleCtrl compose bug
+
 ## [v1.0.0-rc.1] - 2023-01-11
 
 ### Added

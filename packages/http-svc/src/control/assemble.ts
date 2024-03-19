@@ -153,7 +153,7 @@ export class AssembleControl extends HttpSvcControl implements IHttpSvcAssembleC
     /**
      * 顺序逻辑：
      * 1. 如果是内置组件，走覆盖逻辑
-     * 2. 非内置组件，同名中间件，with 覆盖 global；不同名中间件，global顺序靠近洋葱中心
+     * 2. 非内置组件，同名中间件，with 覆盖 global；不同名中间件，global顺序靠洋葱外层，with顺序靠洋葱内层
      * 3. 如果是调整global 与 with 的调用顺序，可使用with(globalMiddlewareName, payload)
      */
     ;(middlewares || []).forEach((m) => {
@@ -168,7 +168,7 @@ export class AssembleControl extends HttpSvcControl implements IHttpSvcAssembleC
           if (middlewareName.startsWith(ORDER_PRIFIX)) {
             middlewareName = middlewareName.substring(ORDER_PRIFIX.length)
             // 必须是没设置过的
-            if (!unique[middlewareName]) {
+            if (!unique[middlewareName] && !(middlewareName in builtInOverride)) {
               const globalMiddlewareIndex = list1.findIndex((m) => m.name === middlewareName)
               if (globalMiddlewareIndex > -1) {
                 // 取对应中间件
