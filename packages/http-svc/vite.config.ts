@@ -18,16 +18,29 @@ if (isProd) {
 }
 // https://vitejs.dev/config/
 export default defineConfig({
-  build: {
-    outDir: 'dist',
-    target: 'esnext',
-    minify: false,
-    lib: {
-      entry: 'src/index.ts',
-      formats: ['cjs', 'es'],
-      fileName: 'index'
-    }
-  },
+  build:
+    process.env.BUILD_TYPE === 'legacy'
+      ? {
+          outDir: 'dist',
+          target: 'es2015',
+          emptyOutDir: false,
+          minify: false,
+          lib: {
+            entry: 'src/index.ts',
+            formats: ['cjs', 'es'],
+            fileName: (format) => `index.legacy.${format === 'es' ? 'esm.' : ''}js`
+          }
+        }
+      : {
+          outDir: 'dist',
+          minify: false,
+          target: 'esnext',
+          lib: {
+            entry: 'src/index.ts',
+            formats: ['cjs', 'es'],
+            fileName: (format) => `index.${format === 'es' ? 'mjs' : 'cjs'}`
+          }
+        },
   plugins,
   server: {
     port: 8080,
