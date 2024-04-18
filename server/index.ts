@@ -18,6 +18,11 @@ router.get('/get', (ctx) => {
   console.log(ctx.request.url) // 打印请求体
   ctx.body = { message: 'GET 请求成功' }
 })
+// 创建 GET 接口
+router.post('/post', (ctx) => {
+  console.log(ctx.request.body) // 打印请求体
+  ctx.body = { message: 'POST 请求成功' }
+})
 // 创建 PUT 接口
 router.put('/put', (ctx) => {
   console.log(ctx.request.body) // 打印请求体
@@ -26,7 +31,7 @@ router.put('/put', (ctx) => {
 
 app.use(router.routes()).use(router.allowedMethods())
 
-// 监听 3000 端口
-app.listen(3000, () => {
+// 监听 3333 端口
+app.listen(3333, () => {
   console.log('Server is running on port 3000')
 })

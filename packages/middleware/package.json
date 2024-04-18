@@ -30,9 +30,15 @@
     "types",
     "README.md"
   ],
-  "keywords": ["http-svc", "middleware", "request", "fetch"],
+  "keywords": [
+    "http-svc",
+    "middleware",
+    "request",
+    "fetch"
+  ],
   "license": "Apache-2.0",
   "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.3",
     "vite": "^4.3.9",
     "vite-plugin-dts": "^2.3.0"
   }

@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite'
+import babel from '@rollup/plugin-babel'
+const isLegacy = process.env.BUILD_TYPE === 'legacy'
 
 // https://vitejs.dev/config/
 const modern = defineConfig({
   build: {
     outDir: 'dist',
-    target: 'esnext',
+    target: 'es2018',
     minify: false,
     lib: {
       entry: './index.ts',
@@ -15,6 +17,13 @@ const modern = defineConfig({
 })
 
 const legacy = defineConfig({
+  plugins: [
+    babel({
+      babelHelpers: 'bundled',
+      exclude: 'node_modules/**',
+      extensions: ['.js', '.ts', '.jsx', '.tsx']
+    }) as any
+  ],
   build: {
     outDir: 'dist',
     target: 'es2015',
@@ -28,5 +37,5 @@ const legacy = defineConfig({
   }
 })
 
-const config = process.env.BUILD_TYPE === 'legacy' ? legacy : modern
+const config = isLegacy ? legacy : modern
 export default config
