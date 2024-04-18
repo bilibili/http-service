@@ -5,9 +5,9 @@
   "main": "dist/index.mjs",
   "module": "dist/index.mjs",
   "scripts": {
-    "build": "pnpm build:esm && pnpm build:cjs",
-    "build:esm": "BUILD_FORMAT=esm vite build",
-    "build:cjs": "BUILD_FORMAT=cjs vite build"
+    "build": "pnpm build:modern && pnpm build:legacy",
+    "build:modern": "BUILD_TYPE=modern vite build"
+    "build:legacy": "BUILD_TYPE=legacy vite build"
   },
   "files": [
     "dist",

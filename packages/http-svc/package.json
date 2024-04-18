@@ -1,10 +1,22 @@
 {
   "name": "http-svc",
-  "version": "1.0.0-rc.6",
+  "version": "1.0.0-rc.7",
   "description": "A HTTP request service for browser and node.js",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "main": "dist/index.legacy.js",
+  "module": "dist/index.legacy.esm.js",
   "types": "types/index.d.ts",
+  "type": "module",
+  "exports": {
+    "./types": "./types/index.d.ts",
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./legacy": {
+      "import": "./dist/index.legacy.esm.js",
+      "require": "./dist/index.legacy.js"
+    }
+  },
   "keywords": [
     "http-svc",
     "middleware",
@@ -23,16 +35,20 @@
   "scripts": {
     "test": "jest",
     "dev": "NODE_ENV=dev vite",
-    "build": "vite build",
+    "build": "pnpm run build:modern && pnpm run build:legacy",
+    "build:modern": "vite build",
+    "build:legacy": "BUILD_TYPE=legacy vite build",
     "prebuild": "pnpm test && pnpm build"
   },
   "peerDependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0-rc.3"
+    "@http-svc/middleware": "workspace:^1.0.0-rc.4"
   },
   "dependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0-rc.3"
+    "@http-svc/middleware": "workspace:^1.0.0-rc.4"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.24.3",
+    "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-typescript": "^11.1.0",
     "@types/crypto-js": "^4.1.1",
     "@types/jest": "^29.5.2",

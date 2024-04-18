@@ -2,10 +2,25 @@
   "name": "@http-svc/xhr-progress",
   "version": "1.0.0",
   "description": "使用XHR来进行监听progress事件",
-  "main": "dist/index.mjs",
-  "module": "dist/index.mjs",
+  "main": "dist/index.legacy.js",
+  "module": "dist/index.legacy.esm.js",
+  "types": "types/index.d.ts",
+  "type": "module",
+  "exports": {
+    "./types": "./types/index.d.ts",
+    "./": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./legacy": {
+      "import": "./dist/index.legacy.esm.js",
+      "require": "./dist/index.legacy.js"
+    }
+  },
   "scripts": {
-    "build": "vite build"
+    "build": "pnpm run build:modern && pnpm run build:legacy",
+    "build:modern": "vite build",
+    "build:legacy": "BUILD_TYPE=legacy vite build"
   },
   "files": [
     "dist",
@@ -15,10 +30,10 @@
   "keywords": [],
   "license": "Apache-2.0",
   "peerDependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0-rc.3"
+    "@http-svc/middleware": "workspace:^1.0.0-rc.4"
   },
   "devDependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0-rc.3",
+    "@http-svc/middleware": "workspace:^1.0.0-rc.4",
     "vite": "^4.3.9",
     "vite-plugin-dts": "^2.3.0",
     "vite-plugin-external": "^1.2.8"

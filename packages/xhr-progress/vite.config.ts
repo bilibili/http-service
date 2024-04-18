@@ -5,12 +5,9 @@ import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
 const pkg = require('./package.json')
 
-const format = process.env.BUILD_FORMAT
-const isEs = format === 'esm'
-
 const isProd = process.env.NODE_ENV === 'production'
 
-const plugins: PluginOption[] = format === 'cjs' ? [dts({})] : []
+const plugins: PluginOption[] = [dts({ outputDir: './types', entryRoot: './' })]
 
 if (isProd) {
   plugins.push(
@@ -23,23 +20,34 @@ if (isProd) {
   )
 }
 
-// https://vitejs.dev/config/
-export default defineConfig({
+const modern = defineConfig({
   build: {
     outDir: 'dist',
-    target: isEs ? 'esnext' : 'es2015',
-    minify: !isEs,
-    emptyOutDir: isEs,
+    target: 'esnext',
+    minify: false,
     lib: {
-      entry: 'index.ts',
-      formats: isEs ? ['es'] : ['cjs'],
-      fileName: 'index'
-    },
-    rollupOptions: {
-      output: {
-        entryFileNames: `index.${isEs ? 'esm.' : ''}js`
-      }
+      entry: './index.ts',
+      formats: ['cjs', 'es'],
+      fileName: (format) => `index.${format === 'es' ? 'mjs' : 'cjs'}`
     }
   },
   plugins
 })
+
+const legacy = defineConfig({
+  build: {
+    outDir: 'dist',
+    target: 'es2015',
+    emptyOutDir: false,
+    minify: false,
+    lib: {
+      entry: './index.ts',
+      formats: ['cjs', 'es'],
+      fileName: (format) => `index.legacy.${format === 'es' ? 'esm.' : ''}js`
+    }
+  },
+  plugins
+})
+
+const config = process.env.BUILD_TYPE === 'legacy' ? legacy : modern
+export default config

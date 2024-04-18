@@ -3,13 +3,8 @@ import type { IHttpSvcMiddleware, IMiddlewareHandler, IHttpSvcMiddlewareInitConf
 export abstract class HttpSvcMiddleware<T = unknown> implements IHttpSvcMiddleware<T> {
   static handler: IMiddlewareHandler
   static mergeConfig = (config?: IMiddlewareHandlerConfig, payload?: any): IMiddlewareHandlerConfig => {
-    return {
-      ...(config || {}),
-      payload: {
-        ...(config?.payload || {}),
-        ...(payload || {})
-      }
-    }
+    const _payload = Object.assign({}, payload || {}, config?.payload || {})
+    return Object.assign({}, config || {}, { payload: _payload })
   }
 
   abstract name: string
@@ -23,11 +18,15 @@ export abstract class HttpSvcMiddleware<T = unknown> implements IHttpSvcMiddlewa
       handler = handlerOrConfig?.handler
       if (handlerOrConfig?.payload) payload = handlerOrConfig.payload
     }
-    this.handler = async (ctx, next, config) => {
-      if (config?.disabled === true) {
-        return await next()
-      }
-      return await (handler || this.handler).bind(this)(ctx, next, HttpSvcMiddleware.mergeConfig(config, payload))
-    }
+    this.handler = (ctx, next, config) =>
+      new Promise((resolve, reject) => {
+        if (config?.disabled === true) {
+          return next().then(resolve).catch(reject)
+        }
+        if (!handler) {
+          handler = this.handler
+        }
+        handler.bind(this)(ctx, next, HttpSvcMiddleware.mergeConfig(config, payload)).then(resolve).catch(reject)
+      })
   }
 }
