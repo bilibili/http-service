@@ -32,8 +32,9 @@ export default defineConfig({
     ? {
         outDir: 'dist',
         target: 'es2015',
+        sourcemap: true,
         emptyOutDir: false,
-        minify: false,
+        minify: true,
         lib: {
           entry: 'src/index.ts',
           formats: ['cjs', 'es'],
@@ -43,6 +44,7 @@ export default defineConfig({
     : {
         outDir: 'dist',
         minify: false,
+        sourcemap: true,
         target: 'es2018',
         lib: {
           entry: 'src/index.ts',

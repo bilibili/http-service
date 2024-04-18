@@ -1,6 +1,6 @@
 {
   "name": "http-svc",
-  "version": "1.0.0-rc.6",
+  "version": "1.0.0-rc.7",
   "description": "A HTTP request service for browser and node.js",
   "main": "dist/index.legacy.js",
   "module": "dist/index.legacy.esm.js",
@@ -13,8 +13,8 @@
       "require": "./dist/index.cjs"
     },
     "./legacy": {
-      "import": "./dist/index.legacy.js",
-      "require": "./dist/index.legacy.esm.js"
+      "import": "./dist/index.legacy.esm.js",
+      "require": "./dist/index.legacy.js"
     }
   },
   "keywords": [

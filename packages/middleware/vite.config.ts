@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, PluginOption } from 'vite'
 import babel from '@rollup/plugin-babel'
 const isLegacy = process.env.BUILD_TYPE === 'legacy'
 
@@ -22,7 +22,7 @@ const legacy = defineConfig({
       babelHelpers: 'bundled',
       exclude: 'node_modules/**',
       extensions: ['.js', '.ts', '.jsx', '.tsx']
-    }) as any
+    }) as PluginOption
   ],
   build: {
     outDir: 'dist',
