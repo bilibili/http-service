@@ -1,25 +1,25 @@
 # XHR Progress <Badge type="warning" text="操作指南" />
 
-使用本中间件可以帮助您实现进度监控。
+使用本中间件可以帮助您实现进度监控等依赖XHR对象的请求方式。
 
 ## 安装
 
 ```shell
-npm install @http-svc/xhr-progress
+npm install @http-svc/xhr
 ```
 
 ## 接入
 
 ```ts
 import { HttpService } from 'http-svc'
-import { HttpSvcXhrProgress } from '@http-svc/xhr-progress'
+import { HttpSvcXhr } from '@http-svc/xhr'
 
 const xttpSvc = new HttpService({
-  fetch: new HttpSvcXhrProgress()
+  fetch: new HttpSvcXhr()
 })
 
 xttpSvc
-    .with('XHR_PROGRESS', {
+    .with('XHR', {
         onCreated(xhr) {
             xhr.upload.addEventListener('progress', (e) => {
             console.log(`${Math.round((e.loaded * 100) / e.total)}%`)
@@ -39,7 +39,7 @@ xttpSvc
     })
 ```
 
-## 参考：XhrProgress 中间件
+## 参考：Xhr 中间件
 
 - **Payload Interface**
 

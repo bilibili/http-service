@@ -54,7 +54,7 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: '服务端请求中间件', link: '/reference/npm-server-fetch' },
-                { text: '监控请求进度中间件', link: '/reference/npm-xhr-progress' },
+                { text: 'XHR请求中间件', link: '/reference/npm-xhr' },
               ]
             },
           ]

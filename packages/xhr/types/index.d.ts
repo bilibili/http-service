@@ -3,8 +3,8 @@ import { HttpSvcMiddleware } from '@http-svc/middleware';
 interface IPayload {
     onCreated?: (xhr: XMLHttpRequest) => void;
 }
-export declare const xhrProgress: IMiddlewareHandler<IPayload>;
-export declare class HttpSvcXhrProgress extends HttpSvcMiddleware<IPayload> {
+export declare const xhr: IMiddlewareHandler<IPayload>;
+export declare class HttpSvcXhr extends HttpSvcMiddleware<IPayload> {
     static handler: IMiddlewareHandler<IPayload>;
     name: string;
     constructor();

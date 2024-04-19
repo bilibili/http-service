@@ -95,16 +95,23 @@ function fetch(ctx: IHttpSvcContext, payload: IPayload): Promise<Response> {
   })
 }
 
-export const xhrProgress: IMiddlewareHandler<IPayload> = async (ctx, next, config) => {
-  if (typeof window === 'undefined') throw new Error('This is a browser middleware')
-  ctx.response = await fetch(ctx, config?.payload || {})
-  await next()
+// 因为这里没有复杂的链式调用，因此不使用async/await而使用promise优化构建
+export const xhr: IMiddlewareHandler<IPayload> = (ctx, next, config) => {
+  return new Promise((resolve, reject) => {
+    if (typeof window === 'undefined') return reject(new Error('This is a browser middleware'))
+    fetch(ctx, config?.payload || {})
+      .then((response) => {
+        ctx.response = response
+        next().then(resolve).catch(reject)
+      })
+      .catch(reject)
+  })
 }
 
-export class HttpSvcXhrProgress extends HttpSvcMiddleware<IPayload> {
-  static handler = xhrProgress
-  name = 'XHR_PROGRESS'
+export class HttpSvcXhr extends HttpSvcMiddleware<IPayload> {
+  static handler = xhr
+  name = 'XHR'
   constructor() {
-    super(xhrProgress)
+    super(xhr)
   }
 }

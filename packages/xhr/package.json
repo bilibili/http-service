@@ -1,7 +1,7 @@
 {
-  "name": "@http-svc/xhr-progress",
-  "version": "1.0.0",
-  "description": "使用XHR来进行监听progress事件",
+  "name": "@http-svc/xhr",
+  "version": "1.0.0-rc.1",
+  "description": "使用XHR来作为fetch中间件，可以使用xhr的事件监听",
   "main": "dist/index.legacy.js",
   "module": "dist/index.legacy.esm.js",
   "types": "types/index.d.ts",

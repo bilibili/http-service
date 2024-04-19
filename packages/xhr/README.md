@@ -1,21 +1,21 @@
-# XHR发起请求获取上传下载进度
+# @http-svc/xhr
 
-本中间件为替换HTTPService里的Fetch作用
+本中间件为替换HTTPService里的Fetch, 用于一些需要使用xhr监听的场景
 
 ## 使用方式
 
 ```js
-import { HttpSvcXhrProgress } from "@http-svc/xhr-progress"
+import { HttpSvcXhr } from "@http-svc/xhr"
 
 const xttpSvc = new HttpService({
-    fetch: new HttpSvcXhrProgress()
+    fetch: new HttpSvcXhr()
 })
 
 xttpSvc
-    .with('XHR_PROGRESS', {
+    .with('XHR', {
         onCreated(xhr) {
             xhr.upload.addEventListener('progress', (e) => {
-            console.log(`${Math.round((e.loaded * 100) / e.total)}%`)
+                console.log(`${Math.round((e.loaded * 100) / e.total)}%`)
             })
         }
     })

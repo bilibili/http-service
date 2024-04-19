@@ -215,7 +215,7 @@ importers:
         specifier: 4.8.4
         version: 4.8.4
 
-  packages/xhr-progress:
+  packages/xhr:
     devDependencies:
       '@http-svc/middleware':
         specifier: workspace:^1.0.0-rc.4

@@ -2,12 +2,12 @@
  * 测试上传进度
  */
 import { HttpService } from '..'
-import { HttpSvcXhrProgress } from '../../../xhr-progress/index'
+import { HttpSvcXhr } from '../../../xhr/index'
 
 document.title = 'upload progress test'
 
 const http = new HttpService({
-  fetch: new HttpSvcXhrProgress()
+  fetch: new HttpSvcXhr()
 })
 
 const app = document.querySelector('#app') as HTMLElement
@@ -29,7 +29,7 @@ const testupload = (file) => {
   const data = new FormData()
   data.append('file', file)
   http
-    .with('XHR_PROGRESS', {
+    .with('XHR', {
       onCreated(xhr: XMLHttpRequest) {
         xhr.upload.addEventListener('progress', (e) => {
           console.log(`${Math.round((e.loaded * 100) / e.total)}%`)

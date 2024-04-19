@@ -23,15 +23,15 @@ if (isProd) {
 const modern = defineConfig({
   build: {
     outDir: 'dist',
-    target: 'esnext',
+    target: 'es2018',
+    sourcemap: true,
     minify: false,
     lib: {
       entry: './index.ts',
       formats: ['cjs', 'es'],
       fileName: (format) => `index.${format === 'es' ? 'mjs' : 'cjs'}`
     }
-  },
-  plugins
+  }
 })
 
 const legacy = defineConfig({
@@ -39,7 +39,7 @@ const legacy = defineConfig({
     outDir: 'dist',
     target: 'es2015',
     emptyOutDir: false,
-    minify: false,
+    sourcemap: true,
     lib: {
       entry: './index.ts',
       formats: ['cjs', 'es'],
