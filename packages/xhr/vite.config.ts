@@ -6,8 +6,8 @@ const require = createRequire(import.meta.url)
 const pkg = require('./package.json')
 
 const isProd = process.env.NODE_ENV === 'production'
-
-const plugins: PluginOption[] = [dts({ outputDir: './types', entryRoot: './' })]
+const isLegacy = process.env.BUILD_TYPE === 'legacy'
+const plugins: PluginOption[] = []
 
 if (isProd) {
   plugins.push(
@@ -18,6 +18,9 @@ if (isProd) {
       }, {})
     }) as PluginOption
   )
+  if (isLegacy) {
+    plugins.push(dts({ outputDir: './types', entryRoot: './' }))
+  }
 }
 
 const modern = defineConfig({
@@ -31,7 +34,8 @@ const modern = defineConfig({
       formats: ['cjs', 'es'],
       fileName: (format) => `index.${format === 'es' ? 'mjs' : 'cjs'}`
     }
-  }
+  },
+  plugins
 })
 
 const legacy = defineConfig({
@@ -49,5 +53,5 @@ const legacy = defineConfig({
   plugins
 })
 
-const config = process.env.BUILD_TYPE === 'legacy' ? legacy : modern
+const config = isLegacy ? legacy : modern
 export default config

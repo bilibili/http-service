@@ -123,7 +123,7 @@ async function main() {
         const newJson = JSON.parse(JSON.stringify(json).replace(/workspace:/g, ''))
         newJson.version = version
         fs.writeFileSync(cwd + '/package.json', JSON.stringify(newJson, null, 2))
-        await execSync(`j publish`, { cwd, stdio: 'inherit' })
+        await execSync(`npm publish`, { cwd, stdio: 'inherit' })
         const finalJson = JSON.parse(JSON.stringify(json))
         finalJson.version = version
         fs.writeFileSync(cwd + '/package.json', JSON.stringify(finalJson, null, 2))

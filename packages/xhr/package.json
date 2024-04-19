@@ -2,13 +2,15 @@
   "name": "@http-svc/xhr",
   "version": "1.0.0-rc.1",
   "description": "使用XHR来作为fetch中间件，可以使用xhr的事件监听",
+  "repository": "https://github.com/bilibili/http-service",
+  "private": false,
   "main": "dist/index.legacy.js",
   "module": "dist/index.legacy.esm.js",
   "types": "types/index.d.ts",
   "type": "module",
   "exports": {
     "./types": "./types/index.d.ts",
-    "./": {
+    ".": {
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
