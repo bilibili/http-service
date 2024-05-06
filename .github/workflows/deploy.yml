@@ -1,0 +1,29 @@
+name: Deploy VitePress to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Build VitePress
+      run: pnpm run docs:build --prefix docs
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs/.vitepress/dist  # 确保指向正确的构建输出目录
