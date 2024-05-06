@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "HTTP Service",
-  base: process.env.NODE_ENV === 'dev' ? '' : '/bili-utils/unify-http-request/',
+  base: process.env.NODE_ENV === 'dev' ? '' : '/http-service/',
   description: "统一请求库站点",
   themeConfig: {
     nav: [
