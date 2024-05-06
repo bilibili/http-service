@@ -28,4 +28,4 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 11 ✔ |
 
 ## 开始上手
 
-请前往Doc站点，查看[快速开始](https://github.io/bilibili/http-service/guide/getting-started)
+请前往文档站点，查看[快速开始](https://bilibili.github.io/http-service/intro/what-is.html)
