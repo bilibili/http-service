@@ -1,6 +1,9 @@
-# XHR Progress <Badge type="warning" text="操作指南" />
+# XHR <Badge type="warning" text="操作指南" />
 
-使用本中间件可以帮助您实现进度监控等依赖XHR对象的请求方式。
+使用本中间件可以帮助您实现：
+
+  1. 直接使用XHR发起请求，无需对Fetch进行polyfill；
+  2. 进度监控等依赖XHR对象的请求方式；
 
 ## 安装
 
