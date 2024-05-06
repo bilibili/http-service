@@ -30,7 +30,7 @@ const httpSvc = new HttpService()
 
 ## NodeJS 环境使用
 
-本节的API参考见 [服务端环境常用中间件](../guide/reference/npm-server-fetch)
+本节的API参考见 [服务端环境常用中间件](../reference/npm-server-fetch)
 
 如果您想在您的node server 中使用请求库，我们提供了一个NPM包 `@http-svc/server-fetch`
 

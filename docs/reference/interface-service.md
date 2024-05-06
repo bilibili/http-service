@@ -176,7 +176,7 @@ httpSvc
 
 您在设计中间件时，选择集成HttpSvcMiddleware并且在构造器内调用了super方法传入当前中间件的handler，才能开启默认的disable能力，否则需要您自行在handler内实现
 
-- **继承自默认中间件，详见[什么是中间件](../middleware.html#什么是中间件)**
+- **继承自默认中间件，详见[什么是中间件](../intro/middleware.md#什么是中间件)**
 
 ```ts
 export class HttpSvcAddSomeParams extends HttpSvcMiddleware {

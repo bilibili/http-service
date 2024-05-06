@@ -4,8 +4,6 @@
 
 ## 什么是中间件？
 
-类型参考详见：[中间件](../guide/reference/interface-middleware-builtin.md)
-
 中间件可以是一个在请求过程中的`异步的handler`
 
 例如下方是一个最简单的`函数式中间件`
@@ -84,3 +82,5 @@ const addSomeParam = async (ctx, next) => {
   await next()
 }
 ```
+
+附内置中间件参考：[内置中间件](../reference/interface-middleware-builtin.md)

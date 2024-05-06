@@ -13,7 +13,7 @@ yarn add http-svc
 
 <!-- 具体区别请前往👉🏻[导入](../reference/interface-service.html#导入) -->
 
-在初始化HttpService时，可以传入[全局配置](./reference/interface-service.html#初始化)
+在初始化HttpService时，可以传入[全局配置](../reference/interface-service.md#初始化)
 
 ```ts
 import { HttpService } from 'http-svc'
