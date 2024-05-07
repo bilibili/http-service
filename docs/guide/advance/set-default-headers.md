@@ -14,7 +14,7 @@ const http = new HttpService([
         const { method, headers } = ctx.request
         // 如果是post请求
         if (method === 'POST') {
-          const key = 'Content-Type' // app 安卓端 jsbridge 只认这个headers key,用这个保险
+          const key = 'Content-Type'
           ctx.request.headers = {
             // assign
             ...(headers || {}),

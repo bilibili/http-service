@@ -42,7 +42,7 @@ httpSvc.request(fetchConfig)
 interface IFetchConfig {
   url: string
   /**
-   * base URL(host) like '//api.bilibili.com'
+   * base URL(host) like '//api.domain.com'
    */
   baseURL?: FetchBaseURL
   /**
