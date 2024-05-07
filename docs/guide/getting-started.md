@@ -31,7 +31,7 @@ const httpSvc = new HttpService({
 
 ```ts
 httpSvc.request({
-  url: '/x/web-interface/nav'
+  url: '/get'
 })
 .then(res => {
   console.log(res)
