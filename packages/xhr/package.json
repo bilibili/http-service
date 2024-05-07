@@ -26,6 +26,7 @@
   },
   "files": [
     "dist",
+    "index.d.ts",
     "index.ts",
     "README.md"
   ],
