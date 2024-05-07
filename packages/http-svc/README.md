@@ -6,7 +6,7 @@ HTTP Service 是一个基于中间件组织模式，同时也是基于洋葱模�
 
 ## Quick start
 
-请前往Doc站点，查看[快速开始](https://http-svc.vercel.app/quick-start)
+请前往文档站点，查看[快速开始](https://bilibili.github.io/http-service/intro/what-is.html)
 
 此处仅提供简单的示例
 
