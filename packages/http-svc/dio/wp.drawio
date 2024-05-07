@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="O5MW6jvS_4ex7MwdgiwH" name="第 1 页">
-        <mxGraphModel dx="1263" dy="532" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="855" dy="438" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -34,11 +34,6 @@
                 <mxCell id="12" value="&lt;font color=&quot;#ffffff&quot;&gt;Response Data&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="575" y="285" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="22" value="" style="edgeStyle=none;html=1;" parent="1" target="5" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="621.5517241379309" y="240" as="sourcePoint"/>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="17" value="&lt;font color=&quot;#ffffff&quot;&gt;Timeout&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="575" y="335.63" width="115" height="17.5" as="geometry"/>
                 </mxCell>
@@ -58,12 +53,12 @@
                     <mxGeometry x="560" y="170" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="24" value="&lt;font color=&quot;#ffffff&quot;&gt;...全局注册中间件&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;" parent="1" vertex="1">
-                    <mxGeometry x="567.5" y="210" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="570" y="210" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="25" value="&lt;font color=&quot;#ffffff&quot;&gt;...临时携带中间件&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;" parent="1" vertex="1">
                     <mxGeometry x="567.5" y="242.5" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="26" value="&lt;font color=&quot;#ffffff&quot;&gt;Body&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="26" value="&lt;font color=&quot;#ffffff&quot;&gt;Body&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="572.5" y="305.63" width="120" height="30" as="geometry"/>
                 </mxCell>
             </root>

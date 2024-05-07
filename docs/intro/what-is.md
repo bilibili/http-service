@@ -66,6 +66,7 @@ Tips：上为请求服务最基本的package size，不含各项扩展能力
 
 感谢以下项目，它们的设计和实现为HTTP Service的开发提供了宝贵的参考：
 
-- [koa](https://github.com/koajs/koa)：现代的Web框架，其中间件架构为我们的设计提供了灵感。
 - [axios](https://github.com/axios/axios)：承载了众多HTTP请求处理的优秀实践，在API层面，我们充分考虑到前端领域中 Axios 的影响，因此也保留了一些Axios用户的使用习惯。
+- [koa](https://github.com/koajs/koa)：现代的Web框架，其中间件架构为我们的设计提供了灵感。
+- [vitepress](https://github.com/vuejs/vitepress)：本文档站点由 VitePress 驱动。
 - [wonder](wonder.md)：如果您阅读到了这里，非常感谢您的耐心，这里有一个精心准备的异想，希望能对您有所帮助。
