@@ -19,7 +19,7 @@ import{_ as s,o as n,c as a,Q as l}from"./chunks/framework.61af9522.js";const A=
 <span class="line"><span style="color:#C792EA;">interface</span><span style="color:#BABED8;"> </span><span style="color:#FFCB6B;">IFetchConfig</span><span style="color:#BABED8;"> </span><span style="color:#89DDFF;">{</span></span>
 <span class="line"><span style="color:#BABED8;">  </span><span style="color:#F07178;">url</span><span style="color:#89DDFF;">:</span><span style="color:#BABED8;"> </span><span style="color:#FFCB6B;">string</span></span>
 <span class="line"><span style="color:#BABED8;">  </span><span style="color:#676E95;font-style:italic;">/**</span></span>
-<span class="line"><span style="color:#676E95;font-style:italic;">   * base URL(host) like &#39;//api.bilibili.com&#39;</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   * base URL(host) like &#39;//api.domain.com&#39;</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   */</span></span>
 <span class="line"><span style="color:#BABED8;">  </span><span style="color:#F07178;">baseURL</span><span style="color:#89DDFF;">?:</span><span style="color:#BABED8;"> </span><span style="color:#FFCB6B;">FetchBaseURL</span></span>
 <span class="line"><span style="color:#BABED8;">  </span><span style="color:#676E95;font-style:italic;">/**</span></span>
