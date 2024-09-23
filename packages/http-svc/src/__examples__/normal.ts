@@ -34,3 +34,17 @@ http
   .catch((error) => {
     console.error(error)
   })
+http
+  .request({
+    url: '/delete',
+    method: 'delete',
+    data: {
+      test_key: 2
+    }
+  })
+  .then((res) => {
+    console.log(res)
+  })
+  .catch((error) => {
+    console.error(error)
+  })

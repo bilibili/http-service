@@ -31,21 +31,19 @@ const initCtx: IMiddlewareHandler = async function (ctx, next) {
   ctx.request.headers = {
     ...(headers || {})
   }
-  if (method === 'POST' || method === 'PUT') {
-    if (data) {
-      if (typeof data === 'object') {
-        if (typeof FormData !== 'undefined' && data instanceof FormData) {
-          const form = new FormData()
-          for (const [key, value] of data.entries()) {
-            form.append(key, value)
-          }
-          ctx.request.data = form
-        } else if (Object.keys(data)) {
-          ctx.request.data = JSON.parse(JSON.stringify(data))
+  if (data) {
+    if (typeof data === 'object') {
+      if (typeof FormData !== 'undefined' && data instanceof FormData) {
+        const form = new FormData()
+        for (const [key, value] of data.entries()) {
+          form.append(key, value)
         }
-      } else {
-        ctx.request.data = data
+        ctx.request.data = form
+      } else if (Object.keys(data)) {
+        ctx.request.data = JSON.parse(JSON.stringify(data))
       }
+    } else {
+      ctx.request.data = data
     }
   }
 

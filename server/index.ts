@@ -1,11 +1,15 @@
 import Koa from 'koa'
 import Router from 'koa-router'
-import bodyParser from 'koa-body'
+import bodyParser, { HttpMethodEnum } from 'koa-body'
 import cors from '@koa/cors'
 const app = new Koa()
 const router = new Router()
 
-app.use(bodyParser())
+app.use(
+  bodyParser({
+    parsedMethods: [HttpMethodEnum.POST, HttpMethodEnum.PUT, HttpMethodEnum.DELETE]
+  })
+)
 app.use(
   cors({
     origin: 'http://localhost',
@@ -15,17 +19,22 @@ app.use(
 
 // 创建 GET 接口
 router.get('/get', (ctx) => {
-  console.log(ctx.request.url) // 打印请求体
+  console.log('get:', ctx.request.url) // 打印请求体
   ctx.body = { message: 'GET 请求成功' }
 })
 // 创建 GET 接口
 router.post('/post', (ctx) => {
-  console.log(ctx.request.body) // 打印请求体
+  console.log('post:', ctx.request.body) // 打印请求体
   ctx.body = { message: 'POST 请求成功' }
+})
+// 创建 DELETE 接口
+router.delete('/delete', (ctx) => {
+  console.log('delete:', ctx.request.body) // 打印请求体
+  ctx.body = { message: 'DELETE 请求成功' }
 })
 // 创建 PUT 接口
 router.put('/put', (ctx) => {
-  console.log(ctx.request.body) // 打印请求体
+  console.log('put:', ctx.request.body) // 打印请求体
   ctx.body = { message: 'PUT 请求成功' }
 })
 

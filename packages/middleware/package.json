@@ -1,6 +1,6 @@
 {
   "name": "@http-svc/middleware",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0",
   "description": "HTTP Service base middleware",
   "repository": "https://github.com/bilibili/http-service",
   "private": false,
@@ -9,12 +9,13 @@
   "types": "types/index.d.ts",
   "type": "module",
   "exports": {
-    "./types": "./types/index.d.ts",
     ".": {
+      "types": "./types/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
     "./legacy": {
+      "types": "./types/index.d.ts",
       "import": "./dist/index.legacy.esm.js",
       "require": "./dist/index.legacy.js"
     }
@@ -28,6 +29,7 @@
     "dist",
     "index.ts",
     "types",
+    "CHANGELOG.md",
     "README.md"
   ],
   "keywords": [
