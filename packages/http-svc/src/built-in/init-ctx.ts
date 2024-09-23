@@ -6,8 +6,6 @@ const initCtx: IMiddlewareHandler = async function (ctx, next) {
   if (!ctx.request) return next()
   const { baseURL, headers, params, data, credentials = 'include' } = ctx.config
   let url = ctx.config.url
-  // 使用upper过的
-  const method = ctx.request.method
 
   const { url: originUrl, params: originParams } = parseUrl(url)
   // 初始化url 和params

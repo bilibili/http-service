@@ -1,7 +1,8 @@
 {
   "name": "http-svc",
-  "version": "1.0.0-rc.8",
+  "version": "1.0.0-rc.9",
   "description": "A HTTP request service for browser and node.js",
+  "private": false,
   "main": "dist/index.legacy.js",
   "module": "dist/index.legacy.esm.js",
   "types": "types/index.d.ts",
