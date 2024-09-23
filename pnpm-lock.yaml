@@ -81,7 +81,7 @@ importers:
   packages/http-svc:
     dependencies:
       '@http-svc/middleware':
-        specifier: workspace:^1.0.0-rc.4
+        specifier: workspace:^1.0.0
         version: link:../middleware
     devDependencies:
       '@babel/plugin-transform-runtime':

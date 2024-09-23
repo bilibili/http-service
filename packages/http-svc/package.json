@@ -1,6 +1,6 @@
 {
   "name": "http-svc",
-  "version": "1.0.0-rc.9",
+  "version": "1.0.0",
   "description": "A HTTP request service for browser and node.js",
   "private": false,
   "main": "dist/index.legacy.js",
@@ -42,10 +42,10 @@
     "prebuild": "pnpm test && pnpm build"
   },
   "peerDependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0-rc.4"
+    "@http-svc/middleware": "workspace:^1.0.0"
   },
   "dependencies": {
-    "@http-svc/middleware": "workspace:^1.0.0-rc.4"
+    "@http-svc/middleware": "workspace:^1.0.0"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.24.3",
