@@ -1,6 +1,6 @@
 {
   "name": "http-svc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A HTTP request service for browser and node.js",
   "private": false,
   "main": "dist/index.legacy.js",

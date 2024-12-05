@@ -27,6 +27,12 @@
 
 - 弃用的功能或特性 -->
 
+## [v1.0.0] - 2024-12-05
+
+### Added
+
+- change dependencies version workspaces
+
 ## [v1.0.0] - 2024-07-18
 
 ### Added
