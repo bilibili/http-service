@@ -41,7 +41,7 @@
     "build": "pnpm run build:modern && pnpm run build:legacy",
     "build:modern": "vite build",
     "build:legacy": "BUILD_TYPE=legacy vite build",
-    "prebuild": "pnpm test && pnpm build"
+    "prebuild": "pnpm test"
   },
   "peerDependencies": {
     "@http-svc/middleware": "workspace:^1.0.0"
