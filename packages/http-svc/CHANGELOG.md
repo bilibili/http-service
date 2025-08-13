@@ -27,7 +27,14 @@
 
 - 弃用的功能或特性 -->
 
-## [v1.0.0] - 2024-12-05
+## [v1.0.2] - 2025-08-13
+
+### Fixed
+
+- 在 `exports` 字段中为主入口点和 legacy 入口点添加 `types` 字段
+- 优化init-ctx时clone `FormData` 逻辑
+
+## [v1.0.1] - 2024-12-05
 
 ### Added
 
@@ -35,6 +42,4 @@
 
 ## [v1.0.0] - 2024-07-18
 
-### Added
-
-- release v1.0.0
+- Initial release

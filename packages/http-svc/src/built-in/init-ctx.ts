@@ -33,9 +33,10 @@ const initCtx: IMiddlewareHandler = async function (ctx, next) {
     if (typeof data === 'object') {
       if (typeof FormData !== 'undefined' && data instanceof FormData) {
         const form = new FormData()
-        for (const [key, value] of data.entries()) {
+        const entries = Array.from((data as FormData).entries())
+        entries.forEach(([key, value]) => {
           form.append(key, value)
-        }
+        })
         ctx.request.data = form
       } else if (Object.keys(data)) {
         ctx.request.data = JSON.parse(JSON.stringify(data))

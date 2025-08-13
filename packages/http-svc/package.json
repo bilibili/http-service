@@ -1,6 +1,6 @@
 {
   "name": "http-svc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A HTTP request service for browser and node.js",
   "private": false,
   "main": "dist/index.legacy.js",
@@ -10,10 +10,12 @@
   "exports": {
     "./types": "./types/index.d.ts",
     ".": {
+      "types": "./types/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
     "./legacy": {
+      "types": "./types/index.d.ts",
       "import": "./dist/index.legacy.esm.js",
       "require": "./dist/index.legacy.js"
     }
